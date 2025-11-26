@@ -2833,24 +2833,14 @@ namespace Terraria
 			}
 		}
 		public Main()
-		{
-			try
-			{
-				this.graphics = new GraphicsDeviceManager(this);
-				base.Content.RootDirectory = "Content";
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Warning: Graphics device initialization failed: {ex.Message}");
-				Console.WriteLine("Continuing in limited graphics mode...");
-				// Don't crash - continue with null graphics if possible
-				if (this.graphics == null)
-				{
-					this.graphics = new GraphicsDeviceManager(this);
-				}
-				base.Content.RootDirectory = "Content";
-			}
-		}
+{
+    this.graphics = new GraphicsDeviceManager(this);
+    
+    // 🌟 THIS IS THE LINE YOU MUST ADD 🌟
+    this.graphics.GraphicsProfile = GraphicsProfile.Reach; 
+    
+    base.Content.RootDirectory = "Content";
+}
 		protected void SetTitle()
 		{
 			base.Window.Title = Lang.title();
@@ -31972,27 +31962,25 @@ namespace Terraria
 		}
 		protected override void Draw(GameTime gameTime)
 		{
-			try
+			if (!Main.gameMenu)
 			{
-				if (!Main.gameMenu)
-				{
-					this.lookForColorTiles();
-				}
-				if (Main.loadMap)
-				{
-					Main.mapMinX = 0;
-					Main.mapMaxX = Main.maxTilesX;
-					Main.mapMinY = 0;
-					Main.mapMaxY = Main.maxTilesY;
-					Main.refreshMap = false;
-					this.DrawToMap();
-				}
-				if (Lighting.lightMode >= 2)
-				{
-					Main.drawToScreen = true;
-				}
-				else
-				{
+				this.lookForColorTiles();
+			}
+			if (Main.loadMap)
+			{
+				Main.mapMinX = 0;
+				Main.mapMaxX = Main.maxTilesX;
+				Main.mapMinY = 0;
+				Main.mapMaxY = Main.maxTilesY;
+				Main.refreshMap = false;
+				this.DrawToMap();
+			}
+			if (Lighting.lightMode >= 2)
+			{
+				Main.drawToScreen = true;
+			}
+			else
+			{
 				Main.drawToScreen = false;
 			}
 			if (Main.drawToScreen && Main.targetSet)
@@ -36314,10 +36302,8 @@ namespace Terraria
 					}
 				}
 			}
-			catch (Exception ex)
+			catch
 			{
-				Console.WriteLine($"Draw error (continuing): {ex.GetType().Name}: {ex.Message}");
-				// Continue despite graphics errors - don't crash the game logic
 			}
 		}
 		[CompilerGenerated]

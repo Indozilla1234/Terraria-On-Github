@@ -57,15 +57,17 @@ python3 -m websockify ${WEBSOCKIFY_PORT} localhost:${VNC_PORT} --web=${WORKSPACE
 WEBSOCKIFY_PID=$!
 sleep 1
 
-# --- 3. Graphics Environment Exports (For Headless/Software Rendering) ---
+# --- 3. Graphics and Runtime Environment Exports (FIXES HERE) ---
 echo "✨ Setting environment variables for robust software rendering..."
 
 # FIX: Force the MESA software driver (llvmpipe is the most stable backend).
-# This is typically the last resort to resolve X_GLXCreateContext errors.
 export MESA_LOADER_DRIVER_OVERRIDE=llvmpipe
 
 # Force the compatibility profile version that should work with older MonoGame/GLX
 export MESA_GL_VERSION_OVERRIDE=3.3Compatibility
+
+# 🔥 FIX: Force .NET 7.0 application to use newer installed runtime (8.0/9.0)
+export DOTNET_ROLL_FORWARD=LatestMajor
 
 # Keep other necessary flags
 export LIBGL_ALWAYS_INDIRECT=1
@@ -84,7 +86,8 @@ echo ""
 
 cd "${WORKSPACE_ROOT}"
 
-GAME_BINARY="./bin/Release/net7.0/linux-x64/publish/Terraria.MonoGame"
+# 🔥 FIX: Correct path to the built binary (net7.0 and removed /publish/)
+GAME_BINARY="./bin/Release/net7.0/Terraria.MonoGame"
 
 if [ "${RUN_BINARY}" = "1" ] && [ -x "${GAME_BINARY}" ]; then
     echo "🎮 RUN_BINARY=1 set and executable found. Starting Terraria..."
