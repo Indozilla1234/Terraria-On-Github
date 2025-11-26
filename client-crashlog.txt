@@ -39,3 +39,25 @@ Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to cr
    at Microsoft.Xna.Framework.Game.Run()
    at Terraria.Program.Main(String[] args) in /workspaces/Terraria-On-Github/Terraria/Program.cs:line 61
 /n
+11/26/2025 14:37:37
+Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to create graphics device!
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at MonoGame.OpenGL.GL.GetString(StringName name)
+   at MonoGame.OpenGL.GL.LoadExtensions()
+   at MonoGame.OpenGL.GL.LoadEntryPoints()
+   at MonoGame.OpenGL.GraphicsContext..ctor(IWindowInfo info)
+   at MonoGame.OpenGL.GL.PlatformCreateContext(IWindowInfo info)
+   at MonoGame.OpenGL.GL.CreateContext(IWindowInfo info)
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.PlatformSetup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.Setup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice..ctor(GraphicsAdapter adapter, GraphicsProfile graphicsProfile, Boolean preferHalfPixelOffset, PresentationParameters presentationParameters)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice(GraphicsDeviceInformation gdi)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   --- End of inner exception stack trace ---
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.Microsoft.Xna.Framework.IGraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.Game.DoInitialize()
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior)
+   at Microsoft.Xna.Framework.Game.Run()
+   at Terraria.Program.Main(String[] args) in /workspaces/Terraria-On-Github/Terraria/Program.cs:line 61
+/n
