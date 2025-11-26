@@ -87,7 +87,7 @@ echo ""
 cd "${WORKSPACE_ROOT}"
 
 # 🔥 FIX: Correct path to the built binary (net7.0 and removed /publish/)
-GAME_BINARY="./bin/Release/net7.0/Terraria.MonoGame"
+GAME_BINARY="./bin/Release/net8.0/linux-x64/Terraria.MonoGame"
 
 if [ "${RUN_BINARY}" = "1" ] && [ -x "${GAME_BINARY}" ]; then
     echo "🎮 RUN_BINARY=1 set and executable found. Starting Terraria..."
