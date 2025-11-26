@@ -25,12 +25,24 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <HintPath>lib\\Microsoft.Xna.Framework.Game.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Microsoft.Xna.Framework" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Include="Microsoft.Xna.Framework">
+      <HintPath>lib\\Microsoft.Xna.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <HintPath>lib\\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="Microsoft.Xna.Framework.Xact" />
+    <Reference Include="Microsoft.Xna.Framework.Xact">
+      <HintPath>lib\\Microsoft.Xna.Framework.Xact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Terraria\ChatLine.cs" />
