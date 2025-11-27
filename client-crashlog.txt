@@ -1,0 +1,63 @@
+11/26/2025 04:38:59
+System.DllNotFoundException: Unable to load shared library 'steam_api.dll' or one of its dependencies. In order to help diagnose loading problems, consider using a tool like strace. If you're using glibc, consider setting the LD_DEBUG environment variable: 
+/workspaces/Terraria-On-Github/bin/Release/net8.0/runtimes/linux-x64/native/steam_api.dll.so: cannot open shared object file: No such file or directory
+/usr/share/dotnet/shared/Microsoft.NETCore.App/8.0.21/steam_api.dll.so: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/steam_api.dll.so: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/runtimes/linux-x64/native/libsteam_api.dll.so: cannot open shared object file: No such file or directory
+/usr/share/dotnet/shared/Microsoft.NETCore.App/8.0.21/libsteam_api.dll.so: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/libsteam_api.dll.so: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/runtimes/linux-x64/native/steam_api.dll: cannot open shared object file: No such file or directory
+/usr/share/dotnet/shared/Microsoft.NETCore.App/8.0.21/steam_api.dll: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/steam_api.dll: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/runtimes/linux-x64/native/libsteam_api.dll: cannot open shared object file: No such file or directory
+/usr/share/dotnet/shared/Microsoft.NETCore.App/8.0.21/libsteam_api.dll: cannot open shared object file: No such file or directory
+/workspaces/Terraria-On-Github/bin/Release/net8.0/libsteam_api.dll: cannot open shared object file: No such file or directory
+
+   at Terraria.Steam.SteamAPI_Init()
+   at Terraria.Steam.Init() in /workspaces/Terraria-On-Github/Terraria/Steam.cs:line 14
+   at Terraria.Program.Main(String[] args) in /workspaces/Terraria-On-Github/Terraria/Program.cs:line 58
+/n
+11/26/2025 04:40:01
+Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to create graphics device!
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at MonoGame.OpenGL.GL.GetString(StringName name)
+   at MonoGame.OpenGL.GL.LoadExtensions()
+   at MonoGame.OpenGL.GL.LoadEntryPoints()
+   at MonoGame.OpenGL.GraphicsContext..ctor(IWindowInfo info)
+   at MonoGame.OpenGL.GL.PlatformCreateContext(IWindowInfo info)
+   at MonoGame.OpenGL.GL.CreateContext(IWindowInfo info)
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.PlatformSetup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.Setup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice..ctor(GraphicsAdapter adapter, GraphicsProfile graphicsProfile, Boolean preferHalfPixelOffset, PresentationParameters presentationParameters)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice(GraphicsDeviceInformation gdi)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   --- End of inner exception stack trace ---
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.Microsoft.Xna.Framework.IGraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.Game.DoInitialize()
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior)
+   at Microsoft.Xna.Framework.Game.Run()
+   at Terraria.Program.Main(String[] args) in /workspaces/Terraria-On-Github/Terraria/Program.cs:line 61
+/n
+11/26/2025 14:37:37
+Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to create graphics device!
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at MonoGame.OpenGL.GL.GetString(StringName name)
+   at MonoGame.OpenGL.GL.LoadExtensions()
+   at MonoGame.OpenGL.GL.LoadEntryPoints()
+   at MonoGame.OpenGL.GraphicsContext..ctor(IWindowInfo info)
+   at MonoGame.OpenGL.GL.PlatformCreateContext(IWindowInfo info)
+   at MonoGame.OpenGL.GL.CreateContext(IWindowInfo info)
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.PlatformSetup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice.Setup()
+   at Microsoft.Xna.Framework.Graphics.GraphicsDevice..ctor(GraphicsAdapter adapter, GraphicsProfile graphicsProfile, Boolean preferHalfPixelOffset, PresentationParameters presentationParameters)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice(GraphicsDeviceInformation gdi)
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   --- End of inner exception stack trace ---
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.GraphicsDeviceManager.Microsoft.Xna.Framework.IGraphicsDeviceManager.CreateDevice()
+   at Microsoft.Xna.Framework.Game.DoInitialize()
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior)
+   at Microsoft.Xna.Framework.Game.Run()
+   at Terraria.Program.Main(String[] args) in /workspaces/Terraria-On-Github/Terraria/Program.cs:line 61
+/n

@@ -2833,10 +2833,14 @@ namespace Terraria
 			}
 		}
 		public Main()
-		{
-			this.graphics = new GraphicsDeviceManager(this);
-			base.Content.RootDirectory = "Content";
-		}
+{
+    this.graphics = new GraphicsDeviceManager(this);
+    
+    // 🌟 THIS IS THE LINE YOU MUST ADD 🌟
+    this.graphics.GraphicsProfile = GraphicsProfile.Reach; 
+    
+    base.Content.RootDirectory = "Content";
+}
 		protected void SetTitle()
 		{
 			base.Window.Title = Lang.title();

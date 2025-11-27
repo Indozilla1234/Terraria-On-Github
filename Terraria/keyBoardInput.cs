@@ -1,10 +1,15 @@
 using System;
 using System.Runtime.InteropServices;
+#if WINDOWS
 using System.Windows.Forms;
+#endif
 namespace Terraria
 {
 	public class keyBoardInput
 	{
+		public static event Action<char> newKeyEvent;
+
+#if WINDOWS
 		public class inKey : IMessageFilter
 		{
 			public bool PreFilterMessage(ref Message m)
@@ -30,12 +35,25 @@ namespace Terraria
 				return false;
 			}
 		}
-		public static event Action<char> newKeyEvent;
+
 		[DllImport("user32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Auto)]
 		public static extern bool TranslateMessage(IntPtr message);
+
 		static keyBoardInput()
 		{
 			Application.AddMessageFilter(new keyBoardInput.inKey());
 		}
+#else
+		// Non-Windows stub: no message filtering available.
+		public static bool TranslateMessage(IntPtr message)
+		{
+			return false;
+		}
+
+		static keyBoardInput()
+		{
+			// No-op on non-Windows platforms.
+		}
+#endif
 	}
 }
